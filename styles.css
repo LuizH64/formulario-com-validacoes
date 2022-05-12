@@ -1,0 +1,73 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #e5e5e5;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: clamp(16px, 0.93vw, 18px);
+  font-weight: 700;
+}
+
+#form {
+  background-color: #fff;
+  padding: 30px 105px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+#form h1 {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 30px;
+}
+#form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+#form .form-group label {
+  margin: 8px 0;
+}
+#form .form-group .input {
+  border: 2px solid #000;
+  border-radius: 7px;
+  padding: 10px;
+  min-width: 16vw;
+  z-index: 1;
+  translate: all 1s;
+}
+#form .form-group.invalid::after {
+  content: attr(error-message);
+  position: relative;
+  color: #dc2727;
+  animation: come-above 0.4s forwards;
+  transform: translateY(-30px);
+}
+#form .form-group.invalid .input {
+  border-color: #dc2727;
+}
+#form .form-group.valid .input {
+  border-color: #1c9f11;
+}
+#form .button {
+  width: 100%;
+  padding: 14px 0;
+  border-radius: 15px;
+  border: 2px solid #000;
+  background-color: #cdd2fd;
+  margin-top: 80px;
+  cursor: pointer;
+}
+#form .button:disabled,
+#form .button [disabled] {
+  background-color: #9c9c9c;
+  color: #000000a3;
+  border: 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: default;
+}
+
+@keyframes come-above {
+  to {
+    transform: translateY(0);
+  }
+}
