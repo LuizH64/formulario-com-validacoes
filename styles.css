@@ -1,19 +1,21 @@
 body {
+  background-image: url("./images/background-img.png");
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #e5e5e5;
+  background-color: #666666;
   font-family: "Source Sans Pro", sans-serif;
   font-size: clamp(16px, 0.93vw, 18px);
   font-weight: 700;
 }
 
 #form {
-  background-color: #fff;
-  padding: 30px 105px;
+  background-color: #ebebeb;
+  padding: 30px 5vw;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 }
 #form h1 {
   text-align: center;
@@ -23,17 +25,23 @@ body {
 #form .form-group {
   display: flex;
   flex-direction: column;
+  margin-bottom: 12px;
 }
 #form .form-group label {
-  margin: 8px 0;
+  margin-top: 8px;
+  margin-bottom: 2px;
 }
 #form .form-group .input {
-  border: 2px solid #000;
-  border-radius: 7px;
+  background-color: #f1f1f1;
+  border: 2px solid #4d4d4d;
+  border-radius: 15px;
   padding: 10px;
-  min-width: 16vw;
+  min-width: 22vw;
   z-index: 1;
   translate: all 1s;
+}
+#form .form-group.invalid {
+  margin-bottom: 0;
 }
 #form .form-group.invalid::after {
   content: attr(error-message);
@@ -41,6 +49,7 @@ body {
   color: #dc2727;
   animation: come-above 0.4s forwards;
   transform: translateY(-30px);
+  font-size: 12px;
 }
 #form .form-group.invalid .input {
   border-color: #dc2727;
@@ -51,10 +60,12 @@ body {
 #form .button {
   width: 100%;
   padding: 14px 0;
-  border-radius: 15px;
-  border: 2px solid #000;
-  background-color: #cdd2fd;
+  border-radius: 35px;
+  border: 1px solid #000;
+  background-color: #1c9f11;
   margin-top: 80px;
+  color: #fff;
+  font-size: 18px;
   cursor: pointer;
 }
 #form .button:disabled,
@@ -63,6 +74,7 @@ body {
   color: #000000a3;
   border: 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  opacity: 0.7;
   cursor: default;
 }
 
